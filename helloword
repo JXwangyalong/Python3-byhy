@@ -1,0 +1,15 @@
+with open('0013_a1.txt','r',encoding='utf-8') as f:
+    nameage = f.read().splitlines()
+g50 = []
+for lins in nameage:
+    lins.replace('  ','')
+    if not lins:
+        continue
+    name,age=lins.split(':')
+        # print(age)
+    if int(age) > 50:
+        g50.append(name)
+
+g50 = f"\n\n大于50岁的人有:{','.join(g50)}"
+with open('0013_a1.txt','a',encoding='utf-8') as f:
+    f.write(g50)
